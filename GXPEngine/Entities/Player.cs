@@ -64,14 +64,14 @@ class Player : EasyDraw {
         this.SetOrigin(width / 2, height / 2);
 
         //uncomment to draw the player hitbox
-        Clear(255, 0, 0, 255);
+        //Clear(255, 0, 0, 255);
 
 
         energyBar = new EnergyBar(currentEnergy, maxEnergy);
-        energyBar.SetOrigin(width / 2, 0);
-        energyBar.SetScaleXY(10f);
-        energyBar.SetXY(game.width / 2, -100);
-        level.ui.LateAddChild(energyBar);
+        energyBar.SetOrigin(width / 2, height / 2);
+        energyBar.SetScaleXY(20f);
+        energyBar.SetXY(0, -2000);
+        this.LateAddChild(energyBar);
 
 
     }
@@ -182,8 +182,8 @@ class Player : EasyDraw {
             Console.WriteLine("Mouse position: " + "X: " + Input.mouseX + " Y: " + Input.mouseY + " player position X: " + x + " Y: " + y);
             Console.WriteLine("Distance between mouse and player vector: " + tv);
             float r = tv.GetAngleDegrees() - rotation;
-            Bullet bullet = new Bullet(a, Vec2.GetUnitVectorDeg(r) * 15);
-            bullet.SetScaleXY(0.2f);
+            Bullet bullet = new Bullet(a, Vec2.GetUnitVectorDeg(r) * 12);
+            bullet.SetScaleXY(0.8f);
             game.LateAddChild(bullet);
 
             //draw = new EasyDraw(50, 50, false);

@@ -98,7 +98,7 @@
  </objectgroup>
  <objectgroup id="2" name="char">
   <object id="1" type="NPC" gid="2147483845" x="604" y="450.667" width="128" height="128"/>
-  <object id="2" type="Player" gid="277" x="711.549" y="1527.22" width="128" height="128"/>
+  <object id="2" type="Player" gid="277" x="465.549" y="431.215" width="128" height="128"/>
  </objectgroup>
  <objectgroup id="4" name="ai">
   <object id="5" type="TutorialSlime" gid="357" x="1754" y="862" width="376" height="256"/>

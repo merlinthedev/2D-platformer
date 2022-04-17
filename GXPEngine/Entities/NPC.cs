@@ -27,7 +27,7 @@ class NPC : EasyDraw {
             "These are slimes",
             "You can shoot at them by aiming\n and clicking LMB",
             "But be careful!\n if they hit you, you might die!",
-            "You have one more ability.\n At the top side of your screen there is\n an energy bar.",
+            "You have one more ability.\n Above you there is\n an energy bar.",
             "When this bar contains enough energy for a dash,\n you can dash with left shift.",
             "Using this ability costs energy,\n so use it wisely.",
             "But do not worry,\n energy regenerates passively.",
@@ -59,7 +59,7 @@ class NPC : EasyDraw {
         this.level = level;
         initializeAnimation();
 
-        Clear(255, 0, 0, 255);
+        //Clear(255, 0, 0, 255);
 
     }
 
@@ -121,7 +121,7 @@ class NPC : EasyDraw {
         }
 
         if (i == 13) {
-            this.SetXY(300, 1600);
+            this.SetXY(100, 1350);
             text.Clear(Color.White);
             text.Text(dialog[i], 0, 50);
         }

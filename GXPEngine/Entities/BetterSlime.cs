@@ -39,7 +39,6 @@ class BetterSlime : AnimationSprite {
 
     private void shoot() {
         int bulletcount = game.FindObjectsOfType<BetterSlimeBullet>().Length;
-        Console.WriteLine(bulletcount);
         Vector2 a = this.TransformPoint(0, 0);
         Vec2 targetVelocity = new Vec2(0, 0);
         targetVelocity.x = flipped ? 1 : -1;

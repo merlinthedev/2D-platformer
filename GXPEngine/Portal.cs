@@ -21,9 +21,19 @@ class Portal : AnimationSprite {
         if (((MyGame)game).getLevelName() == "maps/resizedone.tmx") {
             if (level.player.y <= 1575 && level.player.y >= 1400) {
                 if (level.player.x <= 170) {
-                    this.SetXY(-1000, -1000);
+                    ((MyGame)game).levelname = "maps/two.tmx";
+                    ((MyGame)game).destroyAll();
+                    ((MyGame)game).loadLevel("maps/two.tmx");
+                    this.Destroy();
+                }
+            }
+        } else if (((MyGame)game).getLevelName() == "maps/two.tmx") {
+            if (level.player.y <= 615 && level.player.y >= 425) {
+                if (level.player.x <= 165) { 
+                    ((MyGame)game).levelname = "maps/boss.tmx";
                     ((MyGame)game).destroyAll();
                     ((MyGame)game).loadLevel("maps/boss.tmx");
+                    this.Destroy();
                 }
             }
         }

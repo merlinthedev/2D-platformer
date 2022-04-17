@@ -52,6 +52,10 @@ class Level : Pivot {
         Console.WriteLine("Level loaded");
     }
 
+    public Player getPlayer() {
+        return this.player;
+    }
+
     public void createObjectCallback(Sprite sprite, TiledObject obj) {
         if (obj.Type == "Player" && player == null) { //check so we dont get a player for every NPC object in the tiled map
             this.obj = obj;
@@ -79,7 +83,10 @@ class Level : Pivot {
         //this.AddChild(draw);
 
         int xb = 512;
-        int yb = 128;
+        int yb = 256;
+
+        if (((MyGame)game).getLevelName() == "maps/boss.tmx") yb = 128;
+
         if (player.x + x < xb) {
             x = xb - player.x;
 
@@ -104,6 +111,12 @@ class Level : Pivot {
     private void spawnPortals() {
         if (((MyGame)game).getLevelName() == "maps/resizedone.tmx") {
             Portal portal = new Portal(0, 1400, this);
+            LateAddChild(portal);
+
+        }
+
+        if (((MyGame)game).getLevelName() == "maps/two.tmx") {
+            Portal portal = new Portal(0, 420, this);
             LateAddChild(portal);
 
         }

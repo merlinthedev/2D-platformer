@@ -36,8 +36,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BetterSlimeBullet.cs" />
-    <Compile Include="Bullet.cs" />
+    <Compile Include="Projectiles\BetterSlimeBullet.cs" />
+    <Compile Include="Projectiles\BossBullet.cs" />
+    <Compile Include="Projectiles\Bullet.cs" />
     <Compile Include="DeathTrigger.cs" />
     <Compile Include="Entities\BetterSlime.cs" />
     <Compile Include="Entities\Boss.cs" />
@@ -49,7 +50,7 @@
     <Compile Include="GXPEngine\AddOns\TiledLoader.cs" />
     <Compile Include="UI\Button.cs" />
     <Compile Include="Level.cs" />
-    <Compile Include="Menu.cs" />
+    <Compile Include="UI\Menu.cs" />
     <Compile Include="MyGame.cs" />
     <Compile Include="GXPEngine\Core\Canvas.cs" />
     <Compile Include="GXPEngine\Game.cs" />

@@ -6,7 +6,7 @@ using GXPEngine;
 using GXPEngine.Core;
 
 
-class Bullet : Sprite {
+class Bullet : AnimationSprite {
 
 
     public Vec2 _position {
@@ -18,11 +18,13 @@ class Bullet : Sprite {
     public Vec2 velocity;
 
     private Vec2 position;
-    public Bullet(Vector2 position, Vec2 velocity) : base("circle.png", addCollider: true) {
+    public Bullet(Vector2 position, Vec2 velocity) : base("bullet.png", 3, 4, addCollider: true) {
         this.position.x = position.x;
         this.position.y = position.y;
         this.velocity = velocity;
         collider.isTrigger = true;
+        SetCycle(0, 9);
+        SetOrigin(width / 2, height / 2);
 
     }
 
@@ -55,6 +57,7 @@ class Bullet : Sprite {
     void Update() {
         position += velocity;
         updateScreenPosition();
+        Animate(12 * Time.deltaTime / 1000f);
     }
 }
 

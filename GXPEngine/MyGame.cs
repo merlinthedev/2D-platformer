@@ -8,7 +8,7 @@ class MyGame : Game {
     private UI ui;
     private Menu menu;
 
-    public string levelname = "maps/two.tmx";
+    public string levelname = "maps/resizedone.tmx";
 
     public MyGame() : base(1280, 720, false, false)     //7680 4320
     {
@@ -53,7 +53,7 @@ class MyGame : Game {
    
 
     void Update() {
-        //Console.WriteLine(this.currentFps);
+        Console.WriteLine(this.levelname);
     }
 
     private void debug() {
