@@ -53,7 +53,7 @@ class MyGame : Game {
    
 
     void Update() {
-        Console.WriteLine(this.levelname);
+        //Console.WriteLine(this.levelname);
     }
 
     private void debug() {

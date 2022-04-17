@@ -32,6 +32,11 @@ class NPC : EasyDraw {
             "Using this ability costs energy,\n so use it wisely.",
             "But do not worry,\n energy regenerates passively.",
             "This is a portal. \nJump into the portal to advance to the next level.\n Best of luck!",
+            " ",
+            "Congrats",
+            "You have completed the game :D",
+            "You have proven your might and conquered\n the challenges of this world.",
+            "If you wish to play again, press Q",
             " "
         };
 
@@ -84,11 +89,20 @@ class NPC : EasyDraw {
         }
     }
 
+    public void won() {
+        i = 15;
+    }
+
 
 
     private void drawText() {
         if (Input.GetKeyDown(Key.F)) { i = 2; this.SetXY(obj.X, obj.Y); }
         if (Input.GetKeyDown(Key.E)) i++;
+        if (Input.GetKeyDown(Key.Q) && i > 17) {
+            ((MyGame)game).destroyAll();
+            ((MyGame)game).loadLevel("maps/resizedone.tmx");
+            ((MyGame)game).levelname = "maps/resizedone.tmx";
+        }
         if (i == 0 || i == 1) {
             text.SetXY(0, -400);
             text.Clear(Color.White);
@@ -128,6 +142,14 @@ class NPC : EasyDraw {
 
         if (i > 13) {
             this.SetXY(-1000, -1000);
+        }
+
+        if (i > 14) {
+            this.SetXY(500, 500);
+            level.player.SetXY(x - 200, y);
+            text.Clear(Color.White);
+            text.Text(dialog[i], 0, 50);
+            level.player.ySpeed = 0;
         }
 
 

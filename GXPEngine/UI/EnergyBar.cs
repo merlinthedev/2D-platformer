@@ -6,7 +6,7 @@ class EnergyBar : AnimationSprite {
 
     EasyDraw energyMeter;
     float[] energyParameter = { 0, 0 };
-    public EnergyBar(float currentEnergy, float maxEnergy) : base("sprites/ui/empty.png", 1, 3, addCollider: true) {
+    public EnergyBar(float currentEnergy, float maxEnergy) : base("sprites/ui/empty.png", 1, 1, addCollider: true) {
         this.energy = currentEnergy;
         this.maxEnergy = maxEnergy;
         this.collider.isTrigger = true;
@@ -16,7 +16,7 @@ class EnergyBar : AnimationSprite {
         AddChild(energyMeter);
         energyMeter.collider.isTrigger = true;
         energyMeter.height = 3;
-        energyMeter.SetXY(-8, 90);
+        energyMeter.SetXY(-8, 105);
         energyMeter.color = 0x00ff00;
     }
 
@@ -47,7 +47,7 @@ class EnergyBar : AnimationSprite {
             energyMeter.color = hex;
             energyMeter.width = (int)(energy / maxEnergy * 20);
         }
-        currentFrame = 2 - (int)(energy / (maxEnergy / 3));
+        
     }
 }
 

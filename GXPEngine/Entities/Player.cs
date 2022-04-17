@@ -28,7 +28,7 @@ class Player : EasyDraw {
     private float dashSpeed = 18000f;
     private float jumpSpeed = 2.4f;
     private float velocityMargin = 0.1f;
-    private float xSpeed, ySpeed = 0;
+    public float xSpeed, ySpeed = 0;
     private float gravity = 20f;
     private float currentEnergy = 100f;
     private float maxEnergy = 100f;
@@ -70,7 +70,7 @@ class Player : EasyDraw {
         energyBar = new EnergyBar(currentEnergy, maxEnergy);
         energyBar.SetOrigin(width / 2, height / 2);
         energyBar.SetScaleXY(20f);
-        energyBar.SetXY(0, -2000);
+        energyBar.SetXY(0, -2300);
         this.LateAddChild(energyBar);
 
 
