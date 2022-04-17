@@ -7,12 +7,14 @@ class MyGame : Game {
     public Level level;
     private UI ui;
     private Menu menu;
+    Sound sound;
 
     public string levelname = "maps/resizedone.tmx";
 
     public MyGame() : base(1280, 720, false, false)     //7680 4320
     {
-
+        sound = new Sound("music.wav", looping: true);
+        sound.Play();
         this.ShowMouse(true);
         this.targetFps = 60;
         //createMenu();
