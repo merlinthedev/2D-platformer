@@ -54,6 +54,12 @@ class MyGame : Game {
 
     void Update() {
         //Console.WriteLine(this.levelname);
+
+        if (Input.GetKeyDown(Key.U)) { 
+            destroyAll();
+            loadLevel("maps/boss.tmx");
+            levelname = "maps/boss.tmx";
+        }
     }
 
     private void debug() {
